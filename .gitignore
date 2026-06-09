@@ -1,0 +1,14 @@
+# Compiled binaries (each example builds to its own dir name or te-mcp)
+adk-go-agent/adk-go-agent
+mcp-server-go/mcp-server-go
+mcp-server-go/te-mcp
+*.exe
+
+# Secrets / local env
+.env
+*.env
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/
