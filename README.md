@@ -14,6 +14,7 @@ the one you want and follow its steps below.
 | --- | --- | --- |
 | [`adk-go-agent/`](./adk-go-agent) | Your first AI agent with Google's Agent Development Kit (Gemini + agent + session + runner, streaming the reply) | [Build Your First AI Agent in Go with the ADK](https://tutorialedge.net/ai/build-your-first-ai-agent-in-go-with-adk/) |
 | [`mcp-server-go/`](./mcp-server-go) | A Model Context Protocol server exposing a `search_tutorials` tool over stdio | [Building an MCP Server in Go](https://tutorialedge.net/ai/building-an-mcp-server-in-go/) |
+| [`mcp-server-security-go/`](./mcp-server-security-go) | Harden an MCP server: break it with path traversal, then add path confinement, input limits, output hygiene, rate limiting, and tool annotations | [MCP Server Security in Go](https://tutorialedge.net/ai/mcp-server-security-in-go/) |
 
 ### Also part of the series
 
@@ -55,6 +56,21 @@ go build -o te-mcp .
 
 See [`mcp-server-go/README.md`](./mcp-server-go/README.md) for a one-liner smoke
 test and how to wire it into a client like Claude.
+
+## mcp-server-security-go
+
+The security follow-up to `mcp-server-go`: a deliberately vulnerable `read_doc`
+tool that the tutorial attacks with path traversal, then hardens step by step.
+No API key required.
+
+```bash
+cd mcp-server-security-go
+go build -o te-mcp-secure .
+./te-mcp-secure   # speaks MCP over stdio
+```
+
+See [`mcp-server-security-go/README.md`](./mcp-server-security-go/README.md) for
+the attack payload and the three hardening steps.
 
 ## License
 
